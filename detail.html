@@ -6,38 +6,243 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
 		<link rel="stylesheet" href="index.css">
 		<style>
-			body { background-image: url("images/background.jpg"); background-repeat: repeat;}
+			body { background-image: url("images/background.jpg"); background-repeat: repeat; font-family: Arial, Helvetica, sans-serif;}
 			header { padding: 10px;}
 			.header { font-size: 3.5em; margin-top: -30px; margin-bottom: -30px;}
 			.nav { display: flex; flex-direction: row; }
 			.floating_title { height: 60px;  margin: -40px 0px -30px 20px; padding: 0px 20px 0px 20px; background-color: rgb(231, 223, 185); font-size: 50px; width: max-content}
-
 			.main-top { display: flex; flex-direction: row; padding-top: 20px;} 
-
 			.table-heading { font-weight: bold; font-size: 1.1em; padding-right: 250px;}
-
 			.main-top-col1 { width: 800px; }
 			.main-top-col2 { width: 300px; }
 			.main-top-col2-image { width: 250px; height: auto; }
 			.main-top-col2-subimage { width: 80px; height: auto; }
-
 			.main { width: auto; border: 2px black; border-style: solid; display: flex; flex-direction: column; background-color: rgb(37, 87, 153); padding: 20px; opacity: 85%; z-index: -1; position: relative;}
 			.footer { padding: 10px; background-color: rgb(37, 87, 153);}
-			
-			
+			.bold { font-weight: bold;}
 		</style>
+		<script>
+			var pets=[
+				{
+				"name":"Wishbone",
+				"type":"Dog",
+				"breed":"American Bulldog cross",
+				"breed2":"",
+				"spayed":"Spayed / Neutered",
+				"gender":"Male",
+				"color":"Black",
+				"age":"2Yrs 1Mths 2Wks (approx)",
+				"size":"Large",
+				"health_checks":
+					[
+					{"check":"My health has been checked."},
+					{"check":"My vaccinations are up to date."},
+					{"check":"My worming is up to date."}
+					],
+				"sustainability_check":
+					[
+					],
+				"images":
+					[
+						{"img":"images/20579_1.jpg"},
+						{"img":"images/20579_2.jpg"},
+						{"img":"images/20579_3.jpg"},
+						{"img":"images/20579_4.jpg"},
+					],
+				"id":"20579",
+				"microchipped":true,
+				"micro_num":"985113004709947",
+				"bio":"I am a very intelligent neuroscientist: there is not a single case where a patient of mine has not been relieved of their symptoms. As a matter of fact, none of my clients have left a negative review of me! Some would say they end up in a frozen state of awe and amazement. Or...maybe they've just passed out. Either way, my job is done, and done well!"
+				},
+				{
+				"name":"Benny",
+				"type":"Dog",
+				"breed":"Australian Shepherd cross",
+				"breed2":"",
+				"spayed":"Spayed / Neutered",
+				"gender":"Male",
+				"color":"Brown / White",
+				"age":"2Yrs 1Mths 4Wks (approx)",
+				"size":"",
+				"health_checks":
+					[
+					{"check":"My health has been checked."},
+					{"check":"My vaccinations are up to date."},
+					{"check":"My worming is up to date."}
+					],
+				"sustainability_check":
+					[
+					{"check":"Not Suitable for Children"}
+					],
+				"images":
+					[
+						{"img":"images/23531_1.jpg"},
+						{"img":"images/23531_2.jpg"},
+						{"img":"images/23531_3.jpg"},
+						{"img":"images/23531_4.jpg"},
+					],
+				"id":"23531",
+				"microchipped":true,
+				"micro_num":"985113005872810",
+				"bio":"I am having a ruff day. I couple of colleages have been a real stick up my...They're barking up the wrong tree. They have a scratch I can't itch, they would be better off contacting the paw patrol."
+				},
+				{
+				"name":"Cornelia",
+				"type":"Dog",
+				"breed":"Boxer cross",
+				"breed2":"",
+				"spayed":"Spayed / Neutered",
+				"gender":"Female",
+				"color":"White",
+				"age":"6Yrs 2Mthns 3Wks (approx)",
+				"size":"",
+				"health_checks":
+					[
+					{"check":"My health has been checked."},
+					{"check":"My vaccinations are up to date."},
+					{"check":"My worming is up to date."}
+					],
+				"sustainability_check":
+					[
+					{"check":"OK with Dogs"},
+					{"check":"Laid back"},
+					{"check":"Shy"}
+					],
+				"images":
+					[
+						{"img":"images/23390_1.jpg"},
+						{"img":"images/23390_2.jpg"},
+						{"img":"images/23390_3.jpg"},
+						{"img":"images/23390_4.jpg"},
+					],
+				"id":"23390",
+				"microchipped":true,
+				"micro_num":"985113005872687",
+				"bio":"I am a fun-loving dorge. Doge. Duog. Dug. I don't know how to spell that. One thing I know, squirrels! What what??? Who said squirrels, those are my favorite!! Bark bark bark bark bark bark ruff howl ruff!"
+				},
+				{
+				"name":"Niko",
+				"type":"Cat",
+				"breed":"Domestic Longhair cross",
+				"breed2":"",
+				"spayed":"Spayed / Neutered",
+				"gender":"Male",
+				"color":"Grey tabby / White",
+				"claw":"Declawed",
+				"age":"3 Mths 3Wks",
+				"size":"",
+				"health_checks":
+					[
+					{"check":"My health has been checked."},
+					{"check":"My vaccinations are up to date."},
+					{"check":"My worming is up to date."}
+					],
+				"sustainability_check":
+					[
+					],
+				"images":
+					[
+						{"img":"images/23541_1.jpg"},
+						{"img":"images/23541_2.jpg"},
+						{"img":"images/23541_3.jpg"},
+						{"img":"images/23541_4.jpg"},
+					],
+				"id":"23541",
+				"microchipped":true,
+				"micro_num":"985113006299812",
+				"bio":"I am very literally a baby cat. I cannot even scar you at this point. Move along."
+				},
+				{
+				"name":"Howard",
+				"type":"Cat",
+				"breed":"Domestic Short Hair Mixed Russian",
+				"breed2":"Russian",
+				"spayed":"Spayed / Neutered",
+				"gender":"Male",
+				"color":"Grey",
+				"claw":"No",
+				"age":"Adult",
+				"size":"",
+				"health_checks":
+					[
+					{"check":"My health has been checked."},
+					{"check":"My vaccinations are up to date."},
+					{"check":"My worming is up to date."}
+					],
+				"sustainability_check":
+					[
+					],
+				"images":
+					[
+						{"img":"images/23882_1.jpg"},
+						{"img":"images/23882_2.jpg"},
+						{"img":"images/23882_3.jpg"},
+						{"img":"images/23882_4.jpg"},
+					],
+				"id":"23882",
+				"microchipped":true,
+				"micro_num":"985113006299853",
+				"bio":"I am just a cat. What else do you expect to see here? If you want some detail, check out those dogs. Those are the ones people actually care about :("
+				},
+				{
+				"name":"Hemingway",
+				"type":"Cat",
+				"breed":"Domestic Short Hair cross",
+				"breed2":"",
+				"spayed":"Spayed / Neutered",
+				"gender":"Male",
+				"color":"Grey",
+				"claw":"No",
+				"age":"3Yrs 3Wks (approx)",
+				"size":"",
+				"health_checks":
+					[
+					{"check":"My health has been checked."},
+					{"check":"My vaccinations are up to date."},
+					{"check":"My worming is up to date."}
+					],
+				"sustainability_check":
+					[
+					{"check":"Doesn't Like Cats"},
+					{"check":"Special Needs"}
+					],
+				"images":
+					[
+						{"img":"images/23897_1.jpg"},
+						{"img":"images/23897_2.jpg"},
+						{"img":"images/23897_3.jpg"},
+						{"img":"images/23897_4.jpg"},
+					],
+				"id":"23897",
+				"microchipped":false,
+				"micro_num":"",
+				"bio":"The only personality trait I have is being ornery."
+				}
+			];
+
+			var $_GET=[];
+			window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(a,name,value){$_GET[name]=value;});
+			for (let j = 0; j < pets.length; j++)
+			{
+				if (pets[j]["id"] == $_GET["id"])
+				{
+					var i = j;
+					break;
+				}
+			};
+		</script>
 	</head>
 	<body>
 		<nav>
 			<div class="nav">
 				<p>
-					<a href="">Back to Search Results</a> | 
+					<a href="https://kentoncountypets.shelterbuddy.com/search/default.asp?advanced=&searchType=4&s=adoption">Back to Search Results</a> | 
 					<a href="">Print This Pet</a> | 
-					<a href="">Email to a friend!</a>
+					<a href="mailto: abc@example.com">Email to a friend!</a>
 				</p>
 			</div>
 			<div class="floating_title">
-				<p>DOGGO's Details</p>
+				<p id="title"></p>
 			</div>
 		</nav>
 		
@@ -48,46 +253,46 @@
 						<table>
 							<tr>
 								<td class="table-heading">Type<td>
-								<td class="type">__type__</td>
+								<td id="type"></td>
 							</tr>
 							<tr>
 								<td class="table-heading">Breed<td>
-								<td class="breed">__breed__</td>
+								<td id="breed"></td>
 							</tr>
 							<tr>
 								<td class="table-heading">Second Breed<td>
-								<td class="breed2"></td>
+								<td id="breed2"></td>
 							</tr>
 							<tr>
 								<td class="table-heading">Sex<td>
-								<td class="sex">__male__</td>
+								<td id="gender"></td>
 							</tr>
 							<tr>
 								<td class="table-heading">Color<td>
-								<td class="color">__color__</td>
+								<td id="color"></td>
 							</tr>
 							<tr>
-								<td class="table-heading">Spayed/Neutered<td>
-								<td class="fertility">__yes__</td>
+								<td class="table-heading">Spayed / Neutered<td>
+								<td id="spayed"></td>
 							</tr>
 							<tr>
 								<td class="table-heading">Age<td>
-								<td class="age">__age__</td>
+								<td id="age"></td>
 							</tr>
 							<tr>
 								<td class="table-heading">Size<td>
-								<td class="size">__size__</td>
+								<td id="size"></td>
 							</tr>
 						</table>
 						<div>
-							<p class="">My health has been checked.</p>
-							<p class="">My vaccinations are up to date.</p> 
-							<p class="">My worming is up to date.</p>
-							<p class="">I have been microchipped.</p> 
+							<p id="health"></p>
 							<h3 class="">Animal Identification</h3>
-							<p class="">Animal ID: 20579</p> 
-							<p class="">Please take not of the Animal ID before contacting us</p> 
-							<p class="">Microchip Number: xxxxxxxxx</p> 
+							<p id="animal_id">Animal ID: </p> 
+							<p class="bold">Please take note of the Animal ID before contacting us</p> 
+							<p id="micro_num"></p> 
+							<h3 id="sustainability_head"></h3>
+							<p id="sustainability"></p>
+
 						</div>
 						
 					
@@ -95,34 +300,67 @@
 					</div>
 					<div class="main-top-col2">
 						<div>
-							<img class="main-top-col2-image" src="images/69695_th_600.jpeg" alt="large_image">
+							<img id="image_1" class="main-top-col2-image" src="images/69695_th_600.jpeg" alt="large_image">
 						</div>
 						<div>
-							<img class="main-top-col2-subimage" src="images/69695_th_600.jpeg" alt="small_image">
-							<img class="main-top-col2-subimage" src="images/69695_th_600.jpeg" alt="small_image">
-							<img class="main-top-col2-subimage" src="images/69695_th_600.jpeg" alt="small_image">
+							<img id="image_2" class="main-top-col2-subimage" src="images/69695_th_600.jpeg" alt="small_image">
+							<img id="image_3" class="main-top-col2-subimage" src="images/69695_th_600.jpeg" alt="small_image">
+							<img id="image_4" class="main-top-col2-subimage" src="images/69695_th_600.jpeg" alt="small_image">
 						</div>
 					</div>
 				</div>
 				
 				<div class="main-bottom">
 					<h3>A Little Bit About Me</h3>
-					<p>I am a dog. Ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff ruff</p>
+					<p id="bio"></p>
 					<h3>Where can you find me?</h3>
-					<p>I am at the Kenton County Animal Shelter location.</p>
-					<p>You can contact me by</p>
-					<p>Phone: (859) 356-7400</p>
-					<p>Address: 1020 Mary Laidley</p>
-					<p>Ft Mitchell, KY 41017</p>
-					<p>Also, I am a dog. You can find me wherever dogs go. Like a fire hydrant or a field or chasing a cat.</p>
-					<p>We unfortunately ca not put animals on HOLD over the phone</p>
-					<p>Dear Customer, please understand to prevent disappointment, this website is live and updates frequently, there is chance that when you would arrive at our location the animal you have an interest in might have been adopted or another party might be going through the adoption process at that present time</p>
+					<p>I am at the Kenton County Animal Shelter location.<br>You can contact me by:<br><b>Phone:</b> (859) 356-7400<br><b>Address:</b> 1020 Mary Laidley<br>Ft Mitchell, KY 41017</p>
+					<p>We unfortunately can not put animals on HOLD over the phone.</p>
+					<p>Dear Customer, please understand to prevent disappointment, this website is live and updates frequently, there is chance that when you would arrive at our location the animal you have an interest in might have been adopted or another party might be going through the adoption process at that present time.</p>
 				</div>
 			</div>
+			<script>
+				document.getElementById("title").innerHTML = pets[i]["name"]+"'s Details";
+				document.getElementById("type").innerHTML = pets[i]["type"];
+				document.getElementById("breed").innerHTML = pets[i]["breed"];
+				document.getElementById("breed2").innerHTML = pets[i]["breed2"];
+				document.getElementById("gender").innerHTML = pets[i]["gender"];
+				document.getElementById("color").innerHTML = pets[i]["color"];
+				document.getElementById("spayed").innerHTML = pets[i]["spayed"];
+				document.getElementById("age").innerHTML = pets[i]["age"];
+				document.getElementById("size").innerHTML = pets[i]["size"];
+
+				document.getElementById("image_1").src = pets[i]["images"][0]["img"]; document.getElementById("image_1").alt = "pet_image";
+				document.getElementById("image_2").src = pets[i]["images"][1]["img"]; document.getElementById("image_2").alt = "pet_image";
+				document.getElementById("image_3").src = pets[i]["images"][2]["img"]; document.getElementById("image_3").alt = "pet_image";
+				document.getElementById("image_4").src = pets[i]["images"][3]["img"]; document.getElementById("image_4").alt = "pet_image";
+				
+				document.getElementById("bio").innerHTML = pets[i]["bio"];
+
+				for (let k = 0; k < pets[i]["health_checks"].length; k++)
+				{
+					document.getElementById("health").innerHTML += pets[i]["health_checks"][k]["check"] + "<br>";
+				}
+				document.getElementById("animal_id").innerHTML += pets[i]["id"];
+				if (pets[i]["microchipped"])
+				{
+					document.getElementById("health").innerHTML += "I have been microchipped.";
+					document.getElementById("micro_num").innerHTML = "Microchip Number: " + pets[i]["micro_num"];
+				}				
+				if (pets[i]["sustainability_check"].length > 0)
+				{
+					document.getElementById("sustainability_head").innerHTML = "Sustainability Guide";
+					for (let k = 0; k < pets[i]["sustainability_check"].length; k++)
+					{
+						document.getElementById("sustainability").innerHTML += pets[i]["sustainability_check"][k]["check"] + "<br>";
+					}
+				}
+				
+			
+			</script>
 		</main>
 		<footer>
-			<div class="footer">
-				<a>This is my footer</a>
+			<div class="footer">		
 			</div>
 		</footer>
 	</body>
